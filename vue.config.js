@@ -4,9 +4,9 @@ module.exports = {
   transpileDependencies: ['vuetify'],
   chainWebpack: (config) => {
     config.resolve.alias
-      .set('@')
-      .set('@ui', ui)
-      .set('@lib', R(src, 'libs'))
-      .set('@layouts', R(src, 'layouts'));
+      .set('@$', src)
+      .set('@ui$', ui)
+      .set('@lib$', R(src, 'libs'))
+      .set('@layouts$', R(src, 'layouts'));
   },
 };
