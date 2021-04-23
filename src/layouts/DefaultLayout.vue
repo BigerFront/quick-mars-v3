@@ -1,5 +1,6 @@
 <template>
   <v-app>
+    <top-toolbar />
     <v-main>
       <main-layout />
     </v-main>
@@ -8,10 +9,13 @@
 
 <script>
 import MainLayout from './MainContentLayout';
+import TopToolbar from './TopToolbarLayout';
+
 export default {
   name: 'Q3DefaultLayout',
   components: {
     MainLayout,
+    TopToolbar,
   },
   data() {
     return {};
