@@ -1,10 +1,10 @@
 <template>
-  <v-container></v-container>
+  <v-container>Home</v-container>
 </template>
 
 <script>
 export default {
-  name: 'TopToolbarLayout',
+  name: 'HomeIndex',
   components: {},
   data() {
     return {};

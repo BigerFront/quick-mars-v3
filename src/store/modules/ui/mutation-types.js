@@ -1,0 +1,1 @@
+export const UPD_THEME_DENSE = 'UPD_THEME_DENSE';

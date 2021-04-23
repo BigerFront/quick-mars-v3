@@ -5,3 +5,4 @@
 /*.js
 /test/unit/coverage/
 .*
+/src/libs/global-inject.js
