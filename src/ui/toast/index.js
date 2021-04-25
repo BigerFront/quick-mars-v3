@@ -21,6 +21,7 @@ function showToast(options, type = 'info', duration = 2500, cb) {
   let _duration = duration;
   let _typ = type;
   let _iconSize = 'medium';
+  let _iconName = '';
 
   if (typeof options === 'object') {
     typeof options.message === 'string' && (_message = options.message);
@@ -30,6 +31,7 @@ function showToast(options, type = 'info', duration = 2500, cb) {
     (typeof options.iconSize === 'string' ||
       typeof options.iconSize === 'number') &&
       (_iconSize = options.iconSize);
+    typeof options.iconName === 'string' && (_iconName = options.iconName);
   } else if (typeof options === 'string') {
     _message = options;
   } else {
@@ -39,6 +41,7 @@ function showToast(options, type = 'info', duration = 2500, cb) {
   const _toast = new ToastConstructor({
     data() {
       return {
+        iconName: _iconName,
         show: true,
         type: _typ,
         duration: _duration,

@@ -1,9 +1,9 @@
 <template>
   <div v-if="show" id="__QK3Toast__" class="qk3-toast">
-    <div v-if="inlineMode" class="toast-row-wrap">
+    <div v-if="inlineMode" class="toast-row-wrap" :class="_typClz">
       <div class="left">
         <svg :class="'toast-icon ' + sizeClass" aria-hidden="true">
-          <use :xlink:href="iconName" />
+          <use :xlink:href="getIconName" />
         </svg>
       </div>
       <div class="right">
@@ -26,7 +26,7 @@ export default {
   },
   data() {
     return {
-      //   inlineMode: true,
+      iconName: '',
       show: true,
       duration: 1500,
       message: '',
@@ -35,8 +35,8 @@ export default {
     };
   },
   computed: {
-    iconName() {
-      return `#icon-${this.type}`;
+    getIconName() {
+      return `#icon-${this.iconName || this.type}`;
     },
     sizeClass() {
       let sizeClz = 'svg--size-medium';
@@ -59,6 +59,27 @@ export default {
       }
 
       return sizeClz;
+    },
+    typClz() {
+      let _typClz = '';
+      switch (this.type) {
+        case 'info':
+          _typClz = 'toast-theme-info';
+          break;
+        case 'warn':
+          _typClz = 'toast-theme-warn';
+          break;
+        case 'fail':
+          _typClz = 'toast-theme-fail';
+          break;
+        case 'success':
+          _typClz = 'toast-theme-success';
+          break;
+        default:
+          _typClz = '';
+          break;
+      }
+      return _typClz;
     },
   },
   methods: {
