@@ -60,11 +60,11 @@ function showToast(options, type = 'info', duration = 2500, cb) {
 
   document.body.appendChild($vm);
 
-  if (duration > 0) {
+  if (_duration > 0) {
     setTimeout(() => {
-      //   _toast.show = false;
+      _toast.show = false;
       typeof cb === 'function' && cb();
-    }, duration);
+    }, _duration);
   } else {
     typeof cb === 'function' && cb();
   }

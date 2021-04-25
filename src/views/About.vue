@@ -11,6 +11,9 @@
       <svg-icon icon-class="info" size="xlarge" />
       <svg-icon icon-class="success" size="xlarge" />
     </div>
+    <div style="width: 550px">
+      <v-btn type="warning" outlined>Hello</v-btn>
+    </div>
   </div>
 </template>
 <style scoped>
