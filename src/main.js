@@ -7,6 +7,10 @@ import vuetify from './plugins/vuetify';
 import '@fontsource/open-sans';
 import 'material-design-icons-iconfont/dist/material-design-icons.css';
 
+import './ui/svgicon';
+import Toast from './ui/toast';
+Vue.use(Toast);
+
 Vue.config.productionTip = false;
 
 const qk3 = new Vue({

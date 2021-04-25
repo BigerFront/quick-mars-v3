@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <top-toolbar />
+    <top-toolbar :back-img="false" />
     <v-main>
       <main-layout />
     </v-main>

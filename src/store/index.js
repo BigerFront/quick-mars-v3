@@ -20,7 +20,10 @@ export default new Vuex.Store({
     appVersion: APP_VERSION,
   },
   mutations: {},
-  getters: { ...getters },
+  getters: {
+    appName: (state) => state.appName || '',
+    ...getters,
+  },
   actions: {},
   modules: {
     acc: account,

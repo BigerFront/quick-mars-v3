@@ -1,15 +1,10 @@
 const { R, join, src, ui } = require('./ci/paths');
 const { APP_NAME, APP_VERSION } = require('./config');
 
+const { configurationSvg } = require('./config/svg-loader');
+
 module.exports = {
   transpileDependencies: ['vuetify'],
-  configureWebpack: (config) => {
-    config.resolve.alias['@'] = src;
-    config.resolve.alias['@ui'] = ui;
-    config.resolve.alias['@lib'] = R(src, 'libs');
-    config.resolve.alias['@layouts'] = R(src, 'layouts');
-    config.resolve.alias['@views'] = R(src, 'views');
-  },
   chainWebpack: (config) => {
     // console.log(JSON.stringify(config, null, '2'));
 
@@ -19,5 +14,15 @@ module.exports = {
       args[0]['process.env'].__QK3_APP_NAME__ = JSON.stringify(APP_NAME);
       return args;
     });
+
+    configurationSvg(config, R(ui, 'svgicon'));
+  },
+  configureWebpack: (config) => {
+    config.resolve.alias['@'] = src;
+    config.resolve.alias['@ui'] = ui;
+    config.resolve.alias['@lib'] = R(src, 'libs');
+    config.resolve.alias['@img'] = R(src, 'assets/img');
+    config.resolve.alias['@layouts'] = R(src, 'layouts');
+    config.resolve.alias['@views'] = R(src, 'views');
   },
 };

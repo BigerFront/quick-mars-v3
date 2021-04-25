@@ -11,4 +11,13 @@ const router = new VueRouter({
   routes,
 });
 
+// 不重定向白名单
+// const whiteList = ['/login', '/', '/home', '/error'];
+
+router.beforeEach((to, from, next) => {
+  // TODO handle authorization
+
+  next();
+});
+
 export default router;
