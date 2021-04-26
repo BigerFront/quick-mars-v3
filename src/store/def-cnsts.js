@@ -5,4 +5,5 @@ export const MDI_ICONS = {
   fullscreenExit: 'mdi-fullscreen-exit',
   fullscreen: 'mdi-fullscreen',
   logout: 'mdi-logout-variant',
+  backRestore: 'mdi-backup-restore',
 };

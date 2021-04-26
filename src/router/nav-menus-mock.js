@@ -1,10 +1,10 @@
 const MockNavmenus = [
   {
-    name: 'Home',
-    title: 'Home',
+    name: 'Dashborad',
+    title: 'Dashborad',
     i18n: '',
-    icon: 'mdi-home-city',
-    path: '/home',
+    icon: 'mdi-monitor-dashboard',
+    path: '/dashborad',
   },
   {
     name: 'Account',

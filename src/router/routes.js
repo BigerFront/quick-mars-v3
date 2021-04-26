@@ -1,4 +1,5 @@
 import DefaultLayout from '@layouts/DefaultLayout.vue';
+import DashboradLayout from '@layouts/single/DashboradLayout';
 
 const rootRoutes = [
   {
@@ -23,4 +24,37 @@ const rootRoutes = [
   },
 ];
 
-export default [...rootRoutes];
+const dashborad = [
+  {
+    path: '/dashborad',
+    name: 'Dashborad',
+    component: DashboradLayout,
+    children: [
+      {
+        path: 'index',
+        alias: ['/dashborad'],
+        component: () =>
+          import(
+            /* webpackChunkName: "dashborad" */ '@views/dashborad/Index.vue'
+          ),
+        meta: {
+          auth: true,
+          roles: ['admin', 'user'],
+        },
+      },
+      {
+        path: 'intro',
+        component: () =>
+          import(
+            /* webpackChunkName: "dashintro" */ '@views/dashborad/AnalysisIntro.vue'
+          ),
+        meta: {
+          auth: true,
+          roles: ['admin', 'user'],
+        },
+      },
+    ],
+  },
+];
+
+export default [...rootRoutes, ...dashborad];

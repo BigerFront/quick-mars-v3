@@ -25,4 +25,16 @@ module.exports = {
     config.resolve.alias['@layouts'] = R(src, 'layouts');
     config.resolve.alias['@views'] = R(src, 'views');
   },
+
+  devServer: {
+    proxy: {
+      '/api': {
+        target: 'https://www.tianqiapi.com/api',
+        changeOrigin: true,
+        pathRewrite: {
+          '^/api': '', // 重写路径：去掉路径中开头的 '/api'
+        },
+      },
+    },
+  },
 };
