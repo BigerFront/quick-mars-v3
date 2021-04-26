@@ -1,6 +1,5 @@
 <template>
   <div class="about">
-    <h1>This is an about page</h1>
     <div v-if="false" class="line">
       <svg-icon icon-class="info" size="xsmall" />
       <span>hello</span>
@@ -12,7 +11,7 @@
       <svg-icon icon-class="success" size="xlarge" />
     </div>
     <div style="width: 550px">
-      <v-btn type="warning" outlined>Hello</v-btn>
+      <v-btn color="warning" outlined block>Hello</v-btn>
     </div>
   </div>
 </template>

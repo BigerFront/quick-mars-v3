@@ -24,15 +24,28 @@ export default {
       type: Boolean,
       default: true,
     },
+    type: {
+      type: String,
+      default: 'info',
+    },
+    iconSize: {
+      type: String,
+      default: 'medium',
+    },
+    iconName: {
+      type: String,
+      default: '',
+    },
   },
   data() {
     return {
-      iconName: '',
+      // iconName: '',
+      // type: 'info',
+      // iconSize: 'medium',
+
       show: true,
       duration: 1500,
       message: '',
-      type: 'info',
-      iconSize: 'medium',
     };
   },
   computed: {
@@ -80,6 +93,9 @@ export default {
           return '';
       }
     },
+  },
+  mounted() {
+    console.log('inlineMode>>', this.inlineMode);
   },
   methods: {
     getIconSize() {},
