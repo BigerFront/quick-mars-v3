@@ -1,10 +1,11 @@
 import Vue from 'vue';
+
+import '@mdi/font/css/materialdesignicons.css';
+
 import Vuetify from 'vuetify/lib/framework';
 import zhHant from 'vuetify/lib/locale/zh-Hant';
 
-Vue.use(Vuetify);
-
-export default new Vuetify({
+const vuetifyOpts = {
   theme: {
     options: {
       customProperties: true,
@@ -26,6 +27,10 @@ export default new Vuetify({
     current: 'zhHant',
   },
   icons: {
-    iconfont: 'md',
+    iconfont: 'mdi',
   },
-});
+};
+
+Vue.use(Vuetify);
+
+export default new Vuetify(vuetifyOpts);

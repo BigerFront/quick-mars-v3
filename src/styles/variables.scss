@@ -1,8 +1,12 @@
 $body-font-family: 'Open Sans', serif;
 $font-size-root: 14px;
 $font-root-color: #212121;
+$qk-warn-color: #fb8c00;
+$tooltip-background-color: rgba(233, 233, 235, 0.25) !default;
+$tooltip-text-color: rgba($font-root-color, 1);
+$tooltip-font-size: 12px;
 $toast-border-width: 6px;
-$toast-warn-color: #fb8c00;
+$toast-warn-color: $qk-warn-color;
 $toast-success-color: rgba(58, 194, 121, 1);
 $toast-error-color: rgb(233, 89, 76);
 $toast-info-color: rgb(61, 132, 229);

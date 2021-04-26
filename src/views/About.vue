@@ -12,6 +12,7 @@
     </div>
     <div style="width: 550px">
       <v-btn color="warning" outlined block>Hello</v-btn>
+      <svg-icon icon-class="fastlane" size="xlarge" />
     </div>
   </div>
 </template>

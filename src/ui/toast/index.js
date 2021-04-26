@@ -120,7 +120,6 @@ function showToast(message, type = '', duration, cb) {
       // iconName: _iconName,
       // iconSize: _iconSize,
       // type: _type,
-
       show: true,
       duration: _duration,
       message: _message,

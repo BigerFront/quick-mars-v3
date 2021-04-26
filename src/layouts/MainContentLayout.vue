@@ -11,9 +11,19 @@ export default {
   name: 'Q3MainContentLayout',
   components: {},
   data() {
-    return {};
+    return {
+      drawerPosi: 'left',
+      cliped: true,
+    };
   },
-  computed: {},
+  computed: {
+    clipedLeft() {
+      return this.position !== 'right' && this.cliped;
+    },
+    clipedRight() {
+      return this.position !== 'right' && this.cliped;
+    },
+  },
   methods: {},
 };
 </script>
