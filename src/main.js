@@ -9,6 +9,17 @@ import 'material-design-icons-iconfont/dist/material-design-icons.css';
 
 import './ui/svgicon';
 import Toast from './ui/toast';
+import dayjs from 'dayjs';
+import 'dayjs/locale/zh-cn';
+
+import useEcharts from '@ui/echarts';
+
+Vue.prototype.dayjs = dayjs;
+dayjs.locale('zh-cn');
+
+// Use Echarts
+useEcharts(Vue);
+
 Vue.use(Toast);
 
 Vue.config.productionTip = false;

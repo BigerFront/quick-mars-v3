@@ -7,6 +7,13 @@ const MockNavmenus = [
     path: '/dashborad',
   },
   {
+    name: 'Dashborad',
+    title: 'Dashborad Intro',
+    i18n: '',
+    icon: 'mdi-monitor-dashboard',
+    path: '/dashborad/intro',
+  },
+  {
     name: 'Account',
     title: 'Account',
     i18n: '',

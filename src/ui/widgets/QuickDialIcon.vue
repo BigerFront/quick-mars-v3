@@ -11,19 +11,16 @@
     :transition="transition"
   >
     <template v-slot:activator>
-      <v-btn v-model="fab" color="blue darken-2" dark fab>
+      <v-btn v-model="fab" color="blue light-2" dark fab>
         <v-icon v-if="fab">mdi-close</v-icon>
-        <v-icon v-else>{{ icons.backRestore }}</v-icon>
+        <v-icon v-else>mdi-menu</v-icon>
       </v-btn>
     </template>
     <v-btn fab dark small color="green">
-      <v-icon>mdi-pencil</v-icon>
+      <v-icon>{{ icons.fullscreen }}</v-icon>
     </v-btn>
-    <v-btn fab dark small color="indigo">
-      <v-icon>mdi-plus</v-icon>
-    </v-btn>
-    <v-btn fab dark small color="red">
-      <v-icon>mdi-delete</v-icon>
+    <v-btn fab dark small color="indigo" @click="gobackHome">
+      <v-icon>mdi-home</v-icon>
     </v-btn>
   </v-speed-dial>
 </template>
@@ -51,7 +48,11 @@ export default {
   computed: {
     ...mapGetters('ui', ['icons']),
   },
-  methods: {},
+  methods: {
+    gobackHome() {
+      this.$router.replace({ path: '/' });
+    },
+  },
 };
 </script>
 <style scoped></style>

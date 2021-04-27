@@ -24,6 +24,7 @@ export default {
   },
   computed: {},
   methods: {},
+  beforeDestroy() {},
 };
 </script>
 <style>
@@ -38,7 +39,50 @@ export default {
   user-select: none;
 }
 
-#app * {
-  font-size: 16px;
+ol,
+ul,
+li {
+  list-style: none;
 }
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+  height: 0.3rem;
+  background: hsla(0, 0%, 100%, 0.6);
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 0;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 0;
+  background-color: rgba(95, 95, 95, 0.4);
+  transition: all 0.2s;
+  border-radius: 0.1rem;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(95, 95, 95, 0.7);
+}
+
+/* firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-width: none;
+}
+/* #app * {
+  font-size: 26px;
+} */
 </style>
